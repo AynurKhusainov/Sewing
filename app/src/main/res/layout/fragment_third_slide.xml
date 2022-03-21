@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.myapplication.SliderPages.ThirdSlide">
+
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/first_slide_img"
+            android:layout_width="250dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/debit_card"
+            android:layout_centerHorizontal="true"
+            android:layout_height="250dp"/>
+
+        <TextView
+            android:id="@+id/fs_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first_slide_img"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/bsb"
+            android:text="легкая оплата"
+            android:textColor="#FF5C45"
+            android:textSize="35dp" />
+
+
+        <TextView
+            android:id="@+id/ts_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fs_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_horizontal"
+            android:text="краткое описание краткое описание краткое описание краткое описание краткое описание краткое описание краткое описание краткое описание "
+            android:textColor="#FF5C45"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/ts_btn"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/sign_in"
+                android:layout_width="match_parent"
+                android:text="войти"
+                android:backgroundTint="@color/white"
+                android:textColor="#FF5C45"
+                android:layout_height="match_parent"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/sign_up"
+                android:layout_width="match_parent"
+                android:text="зарегистрироваться"
+                android:backgroundTint="@color/white"
+                android:textColor="#FF5C45"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

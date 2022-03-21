@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "869083894516",
+    "project_id": "sewing-f2825",
+    "storage_bucket": "sewing-f2825.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869083894516:android:4171184efe126ebebbc4a1",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869083894516-k8k28srqul90uu7ef3ghebap8aqaglce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgCTbgVkjbFRTvI6lppuGRDSXk4o5ZvCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869083894516-k8k28srqul90uu7ef3ghebap8aqaglce.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
