@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.Profile">
+    tools:context=".User.bottom_pages.Menu.Profile">
 
 
     <RelativeLayout
@@ -51,185 +51,134 @@
     </RelativeLayout>
 
 
-    <ScrollView
+
+    <LinearLayout
+        android:layout_below="@id/appbar_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/appbar_profile">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <RelativeLayout
+            android:id="@+id/ima_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/background" />
 
             <RelativeLayout
-                android:id="@+id/ima_rel"
                 android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:scaleType="centerCrop"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/background" />
-
                 <RelativeLayout
+                    android:id="@+id/circle_img"
                     android:layout_width="wrap_content"
-                    android:layout_centerInParent="true"
                     android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:id="@+id/circle_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="105dp"
-                            android:layout_height="105dp"
-                            android:background="@drawable/circle" />
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/circle_img"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        android:text="Изменить фото"
-                        android:textColor="@color/white" />
-
+                    <ImageView
+                        android:layout_width="105dp"
+                        android:layout_height="105dp"
+                        android:background="@drawable/circle" />
                 </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/circle_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Изменить фото"
+                    android:textColor="@color/white" />
+
             </RelativeLayout>
+        </RelativeLayout>
 
-           <LinearLayout
-               android:orientation="vertical"
-               android:layout_margin="10dp"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-               <com.google.android.material.textfield.TextInputLayout
-                   android:id="@+id/Fam"
-                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/secPass"
-                   android:layout_marginTop="10dp"
-                   app:boxStrokeColor="#FF5C45"
-                   app:hintTextColor="#FF5C45"
-                   app:startIconDrawable="@drawable/person">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/secPass"
+                android:layout_marginTop="10dp"
+                app:boxStrokeColor="#FF5C45"
+                app:hintTextColor="#FF5C45"
+                app:startIconDrawable="@drawable/person">
 
-                   <EditText
-                       android:id="@+id/FamEdt"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:hint="Фамилия"
-                       android:inputType="textPersonName"
-                       android:maxLength="15"
-                       android:textCursorDrawable="@null" />
+                <EditText
+                    android:id="@+id/NameEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Имя"
+                    android:inputType="textPersonName"
+                    android:maxLength="15"
+                    android:textCursorDrawable="@null" />
 
-               </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-               <com.google.android.material.textfield.TextInputLayout
-                   android:id="@+id/Name"
-                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/auth"
+                android:layout_marginTop="15dp"
+                app:boxStrokeColor="#FF5C45"
+                app:hintTextColor="#FF5C45"
+                app:startIconDrawable="@drawable/email">
 
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/secPass"
-                   android:layout_marginTop="10dp"
-                   app:boxStrokeColor="#FF5C45"
-                   app:hintTextColor="#FF5C45"
-                   app:startIconDrawable="@drawable/person">
+                <EditText
+                    android:id="@+id/mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                   <EditText
-                       android:id="@+id/NameEdt"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:hint="Имя"
-                       android:inputType="textPersonName"
-                       android:maxLength="15"
-                       android:textCursorDrawable="@null" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-               </com.google.android.material.textfield.TextInputLayout>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/FullName"
+                android:layout_marginTop="10dp"
+                app:boxStrokeColor="#FF5C45"
+                app:hintTextColor="#FF5C45"
+                app:startIconDrawable="@drawable/phone">
 
-               <com.google.android.material.textfield.TextInputLayout
-                   android:id="@+id/FullName"
-                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <EditText
+                    android:id="@+id/numberEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Номер телефона"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/secPass"
-                   android:layout_marginTop="10dp"
-                   app:boxStrokeColor="#FF5C45"
-                   app:hintTextColor="#FF5C45"
-                   app:startIconDrawable="@drawable/person">
-
-                   <EditText
-                       android:id="@+id/fullNameEdt"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:hint="Отчество"
-                       android:inputType="textPersonName"
-                       android:maxLength="15"
-                       android:textCursorDrawable="@null" />
-
-               </com.google.android.material.textfield.TextInputLayout>
-
-               <com.google.android.material.textfield.TextInputLayout
-                   android:id="@+id/email"
-                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/auth"
-                   android:layout_marginTop="15dp"
-                   app:boxStrokeColor="#FF5C45"
-                   app:hintTextColor="#FF5C45"
-                   app:startIconDrawable="@drawable/email">
-
-                   <EditText
-                       android:id="@+id/mail"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:hint="Email"
-                       android:inputType="textEmailAddress"
-                       android:textCursorDrawable="@null" />
-               </com.google.android.material.textfield.TextInputLayout>
-
-               <com.google.android.material.textfield.TextInputLayout
-                   android:id="@+id/Number"
-                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/FullName"
-                   android:layout_marginTop="10dp"
-                   app:boxStrokeColor="#FF5C45"
-                   app:hintTextColor="#FF5C45"
-                   app:startIconDrawable="@drawable/phone">
-
-                   <EditText
-                       android:id="@+id/numberEdt"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:hint="Номер телефона"
-                       android:imeOptions="actionDone"
-                       android:inputType="number"
-                       android:maxLength="11"
-                       android:textCursorDrawable="@null" />
-               </com.google.android.material.textfield.TextInputLayout>
-
-               <Button
-                   android:id="@+id/save_profile"
-                   android:layout_width="match_parent"
-                   android:layout_height="60dp"
-                   android:backgroundTint="#FF5C45"
-                   android:text="Сохранить" />
-
-           </LinearLayout>
+            <Button
+                android:id="@+id/save_profile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FF5C45"
+                android:text="Сохранить" />
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -16,23 +16,23 @@
             android:name=".Designer.DesignerMainScreen"
             android:exported="false" />
         <activity
-            android:name=".SignUpScreen"
+            android:name=".Entrance.SignUpScreen"
             android:exported="false" />
         <activity
-            android:name=".SignInScreen"
+            android:name=".Entrance.SignInScreen"
             android:exported="false" />
         <activity
-            android:name=".Favorite"
+            android:name=".User.bottom_pages.Menu.Favorite"
             android:exported="false" />
         <activity
-            android:name=".Profile"
+            android:name=".User.bottom_pages.Menu.Profile"
             android:exported="false" />
         <activity
-            android:name=".SliderPages.SliderScreen"
+            android:name=".Entrance.SliderPages.SliderScreen"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Entrance.SplashScreen"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -42,11 +42,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".About"
+            android:name=".User.bottom_pages.Menu.About"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainScreen"
+            android:name=".User.MainScreen"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

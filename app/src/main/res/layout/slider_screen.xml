@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/zeltiy"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.SliderPages.SliderScreen">
+    tools:context=".Entrance.SliderPages.SliderScreen">
 
 
     <com.google.android.material.tabs.TabLayout

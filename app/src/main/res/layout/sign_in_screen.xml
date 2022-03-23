@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.SignInScreen">
+    tools:context="com.example.myapplication.Entrance.SignInScreen">
 
     <TextView
         android:id="@+id/title_in"
@@ -78,11 +78,11 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:textSize="13dp"
                 android:id="@+id/noAcc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Нет аккаунта?" />
+                android:text="Нет аккаунта?"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/sUp_txt"

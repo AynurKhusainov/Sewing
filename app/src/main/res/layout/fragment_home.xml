@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.myapplication.bottom_pages.Home">
-
+    tools:context=".User.bottom_pages.Home.Home">
 
     <RelativeLayout
         android:id="@+id/appbar_home"
@@ -30,28 +29,303 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <ScrollView
+        android:scrollbars="none"
         android:layout_below="@id/appbar_home"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="match_parent">
 
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layH"
-            android:isScrollContainer="false"
-            app:tabIndicatorColor="@color/white"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:background="@color/white" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pagerH"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/images_slide"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pagerH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layH"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:isScrollContainer="false"
+                    app:tabIndicatorColor="@android:color/transparent" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/icons"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/images_slide">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_android_black_24dp_self" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Свой дизайн"
+                            android:textColor="#7A3FFF" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_android_black_24dp_w" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Женщинам"
+                            android:textColor="#FF0098" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_android_black_24dp_m" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Мужчинам"
+                            android:textColor="#2743FF" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_android_black_24dp_c" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Детям"
+                            android:textColor="#FFAA00" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title_scroll1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icons"
+                android:layout_marginTop="30dp"
+                android:text="Лучшие продажи месяца"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_below="@+id/title_scroll1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/title_scroll2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icons"
+                android:layout_marginTop="30dp"
+                android:text="Лучшие продажи месяца"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_below="@+id/title_scroll2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/title_scroll3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icons"
+                android:layout_marginTop="30dp"
+                android:text="Лучшие продажи месяца"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_below="@+id/title_scroll3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="5dp"
+                        layout="@layout/catalog_item"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>
