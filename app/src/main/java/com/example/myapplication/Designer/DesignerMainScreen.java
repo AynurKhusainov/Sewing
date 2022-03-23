@@ -24,8 +24,7 @@ public class DesignerMainScreen extends AppCompatActivity {
 
         exit=findViewById(R.id.exit);
 
-        skip_log_in = getSharedPreferences(DesignerMainScreen.PrefsSignUp, 0);
-
+        skip_log_in = getSharedPreferences(DesignerMainScreen.PrefsSignUp, 0);//push
         exit.setOnClickListener(view ->
         {
             SharedPreferences.Editor editor = skip_log_in.edit();
