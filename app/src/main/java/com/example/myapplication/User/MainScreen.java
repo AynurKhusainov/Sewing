@@ -15,10 +15,11 @@ import com.example.myapplication.User.bottom_pages.Home.Home;
 import com.example.myapplication.User.bottom_pages.Menu.Menu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainScreen extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class MainScreen extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView bottomNav;
     Fragment selectedFragment;
     int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,33 +36,33 @@ public class MainScreen extends AppCompatActivity implements BottomNavigationVie
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        selectedFragment= null;
+        selectedFragment = null;
 
-        id=0;
+        id = 0;
 
         switch (item.getItemId()) {
             case R.id.home:
-                id=0;
+                id = 0;
                 bottomNav.getMenu().getItem(0).setChecked(true);
                 selectedFragment = new Home();
                 break;
             case R.id.catalog:
-                id=1;
+                id = 1;
                 bottomNav.getMenu().getItem(1).setChecked(true);
                 selectedFragment = new Catalog();
                 break;
             case R.id.create:
-                id=2;
+                id = 2;
                 bottomNav.getMenu().getItem(2).setChecked(true);
                 selectedFragment = new Create();
                 break;
             case R.id.cart:
-                id=3;
+                id = 3;
                 bottomNav.getMenu().getItem(3).setChecked(true);
                 selectedFragment = new Cart();
                 break;
             case R.id.menu:
-                id=4;
+                id = 4;
                 bottomNav.getMenu().getItem(4).setChecked(true);
                 selectedFragment = new Menu();
                 break;
@@ -77,10 +78,9 @@ public class MainScreen extends AppCompatActivity implements BottomNavigationVie
 
     @Override
     public void onBackPressed() {
-        if (bottomNav.getSelectedItemId()==R.id.home)
-        {
+        if (bottomNav.getSelectedItemId() == R.id.home) {
             this.finishAffinity();
-        }else {
+        } else {
             bottomNav.setSelectedItemId(R.id.home);
         }
     }
