@@ -22,7 +22,7 @@ public class DesignerMainScreen extends AppCompatActivity {
         getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
         setContentView(R.layout.designer_main_screen);
 
-        exit=findViewById(R.id.exit);
+        exit = findViewById(R.id.exit);
 
         skip_log_in = getSharedPreferences(DesignerMainScreen.PrefsSignUp, 0);//push
         exit.setOnClickListener(view ->
