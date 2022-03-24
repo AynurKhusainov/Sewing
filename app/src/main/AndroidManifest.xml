@@ -15,8 +15,10 @@
         <activity
             android:name=".Designer.MyOrders"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" />//
         <activity
+
+
             android:name=".Designer.ItemDetailActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
