@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#eee</item>
+        <item name="colorPrimary">#FF5B00</item>
         <item name="colorPrimaryDark">#FF5B00</item>
         <item name="colorAccent">#FF5B00</item>
         <item name="android:windowFullscreen">true</item>
@@ -10,4 +10,11 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+    </style>
+
 </resources>

@@ -29,10 +29,12 @@
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/drawable/users_s_up_back_def.xml" value="0.252" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_about.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_favorite.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_item_detail.xml" value="0.264" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_my_orders.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/catalog_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/designer_main_screen.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/designer_main_screen.xml" value="0.2" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_catalog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_create.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_first_slide_home.xml" value="0.264" />
@@ -41,6 +43,8 @@
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_menu.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_second_slide_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_third_slide_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item.xml" value="0.6" />
+        <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_detail.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/main_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/sign_in_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aynur/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/sign_up_screen.xml" value="0.4" />
