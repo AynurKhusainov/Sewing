@@ -11,6 +11,7 @@
         android:scaleType="centerCrop"
         android:id="@+id/imageView_article"
         android:layout_width="match_parent"
+        android:src="@drawable/platie"
         android:layout_height="200dp"
         app:shapeAppearanceOverlay="@style/roundedImageView"/>
 

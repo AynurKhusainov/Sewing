@@ -6,31 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".Designer.MyOrders">
 
-    <ImageButton
-        android:id="@+id/back_my_orders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/back" />
-    <TextView
-        android:id="@+id/my_ord_txt"
-        android:layout_width="wrap_content"
-        android:text="Мои заказы"
-        android:layout_margin="10dp"
-        android:textSize="25dp"
-        android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content"/>
 
-    <GridView
-        android:layout_below="@+id/my_ord_txt"
-        android:verticalSpacing="10dp"
-        android:gravity="center"
-        android:numColumns="2"
-        android:id="@+id/grwid_orders"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@null"
-        android:scrollbars="none"
-        tools:listitem="@layout/catalog_item" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/back_my_orders"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/back" />
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/my_ord_txt"
+                        android:layout_width="match_parent"
+                        android:text="Мои заказы"
+                        android:layout_margin="10dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <GridView
+                    android:layout_below="@+id/my_ord_txt"
+                    android:verticalSpacing="10dp"
+                    android:gravity="center"
+                    android:numColumns="2"
+                    android:id="@+id/grwid_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/catalog_item" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/my_completed_ord_txt"
+                    android:layout_width="wrap_content"
+                    android:text="Выполненные заказы"
+                    android:layout_margin="10dp"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        layout="@layout/item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        layout="@layout/item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        layout="@layout/item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        layout="@layout/item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
