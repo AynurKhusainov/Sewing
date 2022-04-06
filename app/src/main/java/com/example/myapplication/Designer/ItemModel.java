@@ -6,13 +6,15 @@ public class ItemModel {
     String Header;
     String Description;
     String Type;
+    String Price;
 
-    public ItemModel(int id, int image,String header, String description, String type) {
+    public ItemModel(int id, int image,String header, String description, String type,String price) {
         Id = id;
         Header = header;
         Description = description;
         Image = image;
         Type = type;
+        Price = price;
     }
 
     public int getId() {
@@ -48,6 +50,13 @@ public class ItemModel {
     }
     public void setType(String type) {
         Type = type;
+    }
+
+    public String getPrice() {
+        return Price;
+    }
+    public void setPrice(String price) {
+        Price = price;
     }
 
 }

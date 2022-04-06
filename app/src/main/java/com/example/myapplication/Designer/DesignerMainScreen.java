@@ -29,7 +29,7 @@ public class DesignerMainScreen extends AppCompatActivity {
     ItemAdapter modelAdapter,adapter;
 
     GridView mlistViewArticle;
-    String header,desc,type;
+    String header,desc,type,price;
     int image;
 
     @Override
@@ -72,7 +72,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                         " Гладить при температуре не выше 110 градусов\n" +
                         "\nСрок заказа 27.03.2022\n" +
                         "\nЦена: 2 000 руб.",
-                "Футболка"));
+                "Футболка","Срок заказа 27.03.2022\nЦена: 2 000 руб."));
         arrayList.add(new ItemModel(2, R.drawable.platie, "990 Руб", "Платье на широких бретелях со слегка " +
                 "прилегающим силуэтом из комфортной синтетической ткани. Принт наносится по всей поверхности и сохраняет свою " +
                 "яркость даже спустя сотни стирок. Можно заказать со своим дизайном.\n" +
@@ -85,7 +85,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 "\nПравила ухода: стирать при температуре не выше 40 градусов без отбеливателя. " +
                 "Гладить при температуре не выше 110 градусов.\n" +
                 "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 3 500 руб.", "Платье"));
+                "\nЦена: 3 500 руб.", "Платье","Срок заказа 27.03.2022\nЦена: 3 500 руб."));
         arrayList.add(new ItemModel(3, R.drawable.bruki, "990 Руб", "Брюки 3D сшиты из мягкой синтетической ткани," +
                 " внутри тонкий приятный на ощупь слой. Принт наносится по всей поверхности. В сочетании с толстовкой на молнии можно" +
                 " собрать спортивный костюм с собственным дизайном.\n" +
@@ -96,7 +96,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 "\nПравила ухода: стирать при температуре не выше 40 градусов, без отбеливателя. Гладить " +
                 "при температуре не выше 60 градусов\n" +
                 "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 500 руб.", "Брюки"));
+                "\nЦена: 2 500 руб.", "Брюки","Срок заказа 27.03.2022\nЦена: 2 500 руб."));
         arrayList.add(new ItemModel(4, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
                 "\nТип нанесения: Сублимация на ткани\n" +
                 "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
@@ -107,7 +107,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
                 "выше 110 градусов. Не использовать отбеливатель\n"+
                 "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак"));
+                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
         arrayList.add(new ItemModel(5, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
                 "\nТип нанесения: Сублимация на ткани\n" +
                 "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
@@ -118,7 +118,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
                 "выше 110 градусов. Не использовать отбеливатель\n"+
                 "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак"));
+                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
         arrayList.add(new ItemModel(6, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
                 "\nТип нанесения: Сублимация на ткани\n" +
                 "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
@@ -129,7 +129,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
                 "выше 110 градусов. Не использовать отбеливатель\n"+
                 "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак"));
+                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
         arrayList.add(new ItemModel(7, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
                 "\nТип нанесения: Сублимация на ткани\n" +
                 "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
@@ -140,7 +140,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
                 "выше 110 градусов. Не использовать отбеливатель\n"+
                 "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак"));
+                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
 
 
         mlistViewArticle.setAdapter(modelAdapter);
@@ -174,11 +174,11 @@ public class DesignerMainScreen extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-
                 header = arrayList.get(i).getHeader();
                 desc = arrayList.get(i).getDescription();
                 image = arrayList.get(i).getImage();
                 type = arrayList.get(i).getType();
+                price = arrayList.get(i).getType();
 
                 Intent intent = new Intent(DesignerMainScreen.this, ItemDetailActivity.class);
 
@@ -186,6 +186,7 @@ public class DesignerMainScreen extends AppCompatActivity {
                 intent.putExtra("Description", desc);
                 intent.putExtra("Image", image);
                 intent.putExtra("Type", type);
+                intent.putExtra("Price", price);
                 startActivity(intent);
             }
         });

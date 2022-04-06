@@ -16,8 +16,10 @@ import android.widget.Toast;
 import com.example.myapplication.Designer.DesignerMainScreen;
 import com.example.myapplication.R;
 import com.example.myapplication.User.MainScreen;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +27,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignInScreen extends AppCompatActivity {
 
@@ -113,11 +119,51 @@ public class SignInScreen extends AppCompatActivity {
                     finish();
                 }else if (documentSnapshot.getString("role").equals("user"))
                 {
+                    int id=1;
+                    updateId(id);
                     SharedPreferences.Editor editor = skip_log_in.edit();
                     editor.putString("rolee", "1").apply();
                     startActivity(new Intent(SignInScreen.this, MainScreen.class));
                     finish();
                 }
+            }
+        });
+
+    }
+
+    private void updateId(int id) {
+
+        int example=50;
+        Map<String,Object> userId=new HashMap<>();
+        userId.put("progress",example);
+
+        fStore.collection("users")
+                .whereEqualTo("id",id)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful())
+                {
+                    DocumentSnapshot documentSnapshot=task.getResult().getDocuments().get(0);
+                    String documentId=documentSnapshot.getId();
+
+                    fStore.collection("users")
+                            .document(documentId)
+                            .update(userId)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(SignInScreen.this, "круто", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(SignInScreen.this, "не круто", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
             }
         });
 

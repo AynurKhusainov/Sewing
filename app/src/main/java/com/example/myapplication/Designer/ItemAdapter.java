@@ -32,12 +32,15 @@ public class ItemAdapter extends ArrayAdapter<ItemModel> {
         LayoutInflater layoutInflater=LayoutInflater.from(mContext);
         convertView = layoutInflater.inflate(mResource, parent,false);
         ImageView imageView = convertView.findViewById(R.id.imageView_article);
-        TextView txtHeader = convertView.findViewById(R.id.txt_articleHeader);
         TextView txtType = convertView.findViewById(R.id.txt_articleType);
 
+        TextView price = convertView.findViewById(R.id.price);
+
         imageView.setImageResource(getItem(position).getImage());
-        txtHeader.setText(getItem(position).getHeader());
         txtType.setText(getItem(position).getType());
+        txtType.setText(getItem(position).getType());
+
+        price.setText(getItem(position).getPrice());
 
         return convertView;
     }

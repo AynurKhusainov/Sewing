@@ -2,18 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="150dp"
-    android:background="@drawable/catalog_item_back"
-    android:layout_height="260dp"
+    android:layout_height="300dp"
     android:layout_margin="10dp"
+    android:background="@drawable/catalog_item_back"
     android:orientation="vertical">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:scaleType="centerCrop"
         android:id="@+id/imageView_article"
         android:layout_width="match_parent"
-        android:src="@drawable/platie"
         android:layout_height="200dp"
-        app:shapeAppearanceOverlay="@style/roundedImageView"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/platie"
+        app:shapeAppearanceOverlay="@style/roundedImageView" />
 
     <TextView
         android:id="@+id/txt_articleType"
@@ -26,14 +26,12 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
+
     <TextView
-        android:id="@+id/txt_articleHeader"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/price"
         android:layout_below="@id/txt_articleType"
         android:layout_centerHorizontal="true"
-        android:text="990 P"
-        android:textColor="#FF5C45" />
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
