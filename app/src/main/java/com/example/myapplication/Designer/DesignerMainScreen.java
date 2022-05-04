@@ -1,12 +1,15 @@
 package com.example.myapplication.Designer;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +20,12 @@ import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Entrance.SignInScreen;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -28,9 +37,12 @@ public class DesignerMainScreen extends AppCompatActivity {
     ArrayList<ItemModel> arrayList;
     ItemAdapter modelAdapter,adapter;
 
+    FirebaseFirestore db;
+
     GridView mlistViewArticle;
     String header,desc,type,price;
-    int image;
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +50,17 @@ public class DesignerMainScreen extends AppCompatActivity {
         getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
         setContentView(R.layout.designer_main_screen);
 
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Fetching data...");
+        progressDialog.show();
+
         exit = findViewById(R.id.exit);
         my_orders = findViewById(R.id.my_orders);
 
         skip_log_in = getSharedPreferences(DesignerMainScreen.PrefsSignUp, 0);//push
+
+        db=FirebaseFirestore.getInstance();
 
         exit.setOnClickListener(view -> {
             SharedPreferences.Editor editor = skip_log_in.edit();
@@ -58,90 +77,7 @@ public class DesignerMainScreen extends AppCompatActivity {
         arrayList = new ArrayList<>();
         modelAdapter = new ItemAdapter(DesignerMainScreen.this, R.layout.item, arrayList);
 
-        arrayList.add(new ItemModel(1, R.drawable.futbolka, "990 Руб",
-                "Футболка 3D — это удобная футболка прямого кроя, выполненная из синтетической ткани, " +
-                        "приятной на ощупь. Свойства ткани позволяют нанести яркий принт по всей поверхности, " +
-                        "сохраняя при этом цену за изделие доступной при персонализированном производстве ( все " +
-                        "товары на Vsemayki создаются под заказ). Футболка быстро сохнет, не мнется и сохраняет форму. " +
-                        "Можно заказать со своим дизайном.\n" +
-                "\nДетали: прямой крой, круглый вырез горловины, длина до линии бедер \n" +
-                "\nТип нанесения: сублимация на ткани\n" +
-                "\nСостав: 100% полиэстер\n" +
-                "\nПараметры модели на фото: рост 170 см, обхваты 80-60-93 см, размер футболки S\n" +
-                "\nПравила ухода: стирать при температуре не выше 40 градусов, без отбеливателя." +
-                        " Гладить при температуре не выше 110 градусов\n" +
-                        "\nСрок заказа 27.03.2022\n" +
-                        "\nЦена: 2 000 руб.",
-                "Футболка","Срок заказа 27.03.2022\nЦена: 2 000 руб."));
-        arrayList.add(new ItemModel(2, R.drawable.platie, "990 Руб", "Платье на широких бретелях со слегка " +
-                "прилегающим силуэтом из комфортной синтетической ткани. Принт наносится по всей поверхности и сохраняет свою " +
-                "яркость даже спустя сотни стирок. Можно заказать со своим дизайном.\n" +
-                "\nРост модели на фото: 172 см\n" +
-                "\nТип нанесения: сублимация на ткани\n" +
-                "\nДетали: полуприлегающий силуэт, широкие бретели, круглый вырез горловины, удлиненный подол сзади\n" +
-                "\nПараметры модели на фото: 90-63-82 см\n" +
-                "\nСостав: 100% полиэстер\n" +
-                "\nРазмер модели на фото: S\n" +
-                "\nПравила ухода: стирать при температуре не выше 40 градусов без отбеливателя. " +
-                "Гладить при температуре не выше 110 градусов.\n" +
-                "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 3 500 руб.", "Платье","Срок заказа 27.03.2022\nЦена: 3 500 руб."));
-        arrayList.add(new ItemModel(3, R.drawable.bruki, "990 Руб", "Брюки 3D сшиты из мягкой синтетической ткани," +
-                " внутри тонкий приятный на ощупь слой. Принт наносится по всей поверхности. В сочетании с толстовкой на молнии можно" +
-                " собрать спортивный костюм с собственным дизайном.\n" +
-                "\nТип нанесения: сублимация на ткани\n" +
-                "\nСостав: 100% полиэстер\n" +
-                "\nДетали: манжеты по низу, эластичный пояс регулируется шнурком, по бокам два кармана без " +
-                "застежек, внутренняя часть кармана из мелкой сетки\n" +
-                "\nПравила ухода: стирать при температуре не выше 40 градусов, без отбеливателя. Гладить " +
-                "при температуре не выше 60 градусов\n" +
-                "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 500 руб.", "Брюки","Срок заказа 27.03.2022\nЦена: 2 500 руб."));
-        arrayList.add(new ItemModel(4, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
-                "\nТип нанесения: Сублимация на ткани\n" +
-                "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
-                "прямой силуэт, рукава втачные одношовные, накладной карман-кенгуру, по низу изделия " +
-                "и рукава притачные манжеты. Брюки: эластичный пояс на резинке регулируется шнурком, карманы " +
-                "в боковых швах, эластичные манжеты на резинке по низу брюк.\n" +
-                "\nСезон: Демисезон\n" +
-                "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
-                "выше 110 градусов. Не использовать отбеливатель\n"+
-                "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
-        arrayList.add(new ItemModel(5, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
-                "\nТип нанесения: Сублимация на ткани\n" +
-                "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
-                "прямой силуэт, рукава втачные одношовные, накладной карман-кенгуру, по низу изделия " +
-                "и рукава притачные манжеты. Брюки: эластичный пояс на резинке регулируется шнурком, карманы " +
-                "в боковых швах, эластичные манжеты на резинке по низу брюк.\n" +
-                "\nСезон: Демисезон\n" +
-                "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
-                "выше 110 градусов. Не использовать отбеливатель\n"+
-                "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
-        arrayList.add(new ItemModel(6, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
-                "\nТип нанесения: Сублимация на ткани\n" +
-                "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
-                "прямой силуэт, рукава втачные одношовные, накладной карман-кенгуру, по низу изделия " +
-                "и рукава притачные манжеты. Брюки: эластичный пояс на резинке регулируется шнурком, карманы " +
-                "в боковых швах, эластичные манжеты на резинке по низу брюк.\n" +
-                "\nСезон: Демисезон\n" +
-                "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
-                "выше 110 градусов. Не использовать отбеливатель\n"+
-                "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
-        arrayList.add(new ItemModel(7, R.drawable.pidjak, "990 Руб", "Состав: 100% полиэстер\n" +
-                "\nТип нанесения: Сублимация на ткани\n" +
-                "\nДетали: Костюм из тонкого трикотажа с мягким начёсом внутри. Толстовка : " +
-                "прямой силуэт, рукава втачные одношовные, накладной карман-кенгуру, по низу изделия " +
-                "и рукава притачные манжеты. Брюки: эластичный пояс на резинке регулируется шнурком, карманы " +
-                "в боковых швах, эластичные манжеты на резинке по низу брюк.\n" +
-                "\nСезон: Демисезон\n" +
-                "\nПравила ухода: Стирать при температуре не выше 40 градусов. Гладить при температуре не " +
-                "выше 110 градусов. Не использовать отбеливатель\n"+
-                "\nСрок заказа 27.03.2022\n" +
-                "\nЦена: 2 200 руб.", "Пиджак","Срок заказа 27.03.2022\nЦена: 2 200 руб."));
-
+        EventChangeListener();
 
         mlistViewArticle.setAdapter(modelAdapter);
 
@@ -176,7 +112,6 @@ public class DesignerMainScreen extends AppCompatActivity {
 
                 header = arrayList.get(i).getHeader();
                 desc = arrayList.get(i).getDescription();
-                image = arrayList.get(i).getImage();
                 type = arrayList.get(i).getType();
                 price = arrayList.get(i).getType();
 
@@ -184,11 +119,36 @@ public class DesignerMainScreen extends AppCompatActivity {
 
                 intent.putExtra("Header", header);
                 intent.putExtra("Description", desc);
-                intent.putExtra("Image", image);
                 intent.putExtra("Type", type);
                 intent.putExtra("Price", price);
                 startActivity(intent);
             }
         });
+    }
+
+    private void EventChangeListener() {
+        db.collection("orders").orderBy("header", Query.Direction.ASCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                        if (error != null) {
+
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
+
+                            Log.e("Firestore error",error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc: value.getDocumentChanges()){
+                            if (dc.getType()==DocumentChange.Type.ADDED)
+                                arrayList.add(dc.getDocument().toObject(ItemModel.class));
+                        }
+                        modelAdapter.notifyDataSetChanged();
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
+
+                    }
+                });
     }
 }

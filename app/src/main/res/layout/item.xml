@@ -28,10 +28,11 @@
 
 
     <TextView
-        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
         android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/txt_articleType"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:gravity="center" />
 </RelativeLayout>

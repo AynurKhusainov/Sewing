@@ -36,7 +36,6 @@ public class ItemAdapter extends ArrayAdapter<ItemModel> {
 
         TextView price = convertView.findViewById(R.id.price);
 
-        imageView.setImageResource(getItem(position).getImage());
         txtType.setText(getItem(position).getType());
         txtType.setText(getItem(position).getType());
 

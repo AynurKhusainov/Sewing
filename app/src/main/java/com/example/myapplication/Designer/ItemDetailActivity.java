@@ -26,7 +26,6 @@ public class ItemDetailActivity extends AppCompatActivity {
 
         TextView txt_HeaderArticleDetail = this.findViewById(R.id.txtHeaderArticleDetail);
         TextView txt_DesArticleDetail = this.findViewById(R.id.txtDesArticleDetail);
-        ImageView imageView_ArticleDetail = this.findViewById(R.id.imageViewArticleDetail);
         TextView txtPrice = this.findViewById(R.id.txtPrice);
 
 
@@ -40,7 +39,6 @@ public class ItemDetailActivity extends AppCompatActivity {
         if (extras != null) {
             txt_HeaderArticleDetail.setText(extras.getString("Type"));
             txtPrice.setText(extras.getString("Header"));
-            imageView_ArticleDetail.setImageResource(extras.getInt("Image"));
             txt_DesArticleDetail.setText(extras.getString("Description"));
 
         }
