@@ -20,15 +20,31 @@
             <RelativeLayout
                 android:id="@+id/head"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="300dp">
 
                 <ImageView
-                    android:src="@drawable/platie"
-                    android:id="@+id/imageViewArticleDetail"
+                    android:id="@+id/image_view_fon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY" />
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/front" />
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:id="@+id/imageViewArticleDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
 
+                <TextView
+                    android:id="@+id/status"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="15dp"
+                    android:textColor="@color/my1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
                 <ImageButton
                     android:id="@+id/btnBackArticleDetail"
                     android:layout_width="wrap_content"
@@ -44,11 +60,12 @@
                 android:orientation="vertical"
                 android:padding="15dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_weight="1"
                         android:id="@+id/txtHeaderArticleDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -57,15 +74,18 @@
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
+
                     <TextView
-                        android:id="@+id/txtPrice"
-                        android:layout_width="wrap_content"
+                        android:gravity="right"
+                        android:layout_gravity="right"
+                        android:id="@+id/price"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="цена"
                         android:textColor="#FF5C45"
                         android:textSize="20dp" />
-                </RelativeLayout>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/txtDesArticleDetail"

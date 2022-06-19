@@ -70,6 +70,7 @@
                 android:src="@drawable/background" />
 
             <RelativeLayout
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_height="wrap_content">
@@ -113,10 +114,12 @@
                 android:layout_below="@+id/secPass"
                 android:layout_marginTop="10dp"
                 app:boxStrokeColor="#FF5C45"
+                android:enabled="false"
                 app:hintTextColor="#FF5C45"
                 app:startIconDrawable="@drawable/person">
 
                 <EditText
+                    android:enabled="false"
                     android:id="@+id/NameEdt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -135,6 +138,7 @@
                 android:layout_below="@+id/auth"
                 android:layout_marginTop="15dp"
                 app:boxStrokeColor="#FF5C45"
+                android:enabled="false"
                 app:hintTextColor="#FF5C45"
                 app:startIconDrawable="@drawable/email">
 
@@ -143,6 +147,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
+                    android:enabled="false"
                     android:inputType="textEmailAddress"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -156,26 +161,21 @@
                 android:layout_below="@+id/FullName"
                 android:layout_marginTop="10dp"
                 app:boxStrokeColor="#FF5C45"
+                android:enabled="false"
                 app:hintTextColor="#FF5C45"
-                app:startIconDrawable="@drawable/phone">
+                app:startIconDrawable="@drawable/lock">
 
                 <EditText
                     android:id="@+id/numberEdt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Номер телефона"
+                    android:hint="Пароль"
+                    android:enabled="false"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:maxLength="11"
+                    android:inputType="textVisiblePassword"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/save_profile"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="#FF5C45"
-                android:text="Сохранить" />
 
         </LinearLayout>
 

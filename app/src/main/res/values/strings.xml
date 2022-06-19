@@ -1,5 +1,30 @@
 <resources>
     <string name="app_name">Diplom</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string-array name="size">
+        <item>XXS</item>
+        <item>XS</item>
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+        <item>XXL</item>
+        <item>3XL</item>
+        <item>4XL</item>
+        <item>5XL</item>
+        <item>6XL</item>
+        <item>7XL</item>
+    </string-array>
+    <string-array name="raw">
+        <item>Шерсть</item>
+        <item>Шелк</item>
+        <item>Хлопок</item>
+        <item>Лен</item>
+        <item>Вискоза</item>
+        <item>Ацетат</item>
+        <item>Акрил</item>
+        <item>Полиэстер</item>
+        <item>Пенька</item>
+        <item>Бамбук</item>
+    </string-array>
 </resources>

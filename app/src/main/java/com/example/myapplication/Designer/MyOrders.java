@@ -1,26 +1,36 @@
 package com.example.myapplication.Designer;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
 import com.example.myapplication.R;
+import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
 public class MyOrders extends AppCompatActivity {
 
+
     ImageButton my_orders;
-
-    ArrayList<ItemModel> arrayList;
-    ItemAdapter modelAdapter;
-
-    GridView mlistViewArticle;
-    String header,desc,type;
+    TabLayout tab_layout;
+    ViewPager2 pager2;
+    MyOrderAdapter myOrderAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,45 +38,41 @@ public class MyOrders extends AppCompatActivity {
         getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
         setContentView(R.layout.activity_my_orders);
 
+        tab_layout = findViewById(R.id.tab_layout);
+        pager2 = findViewById(R.id.pager2);
         my_orders=findViewById(R.id.back_my_orders);
-
         my_orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+        myOrderAdapter = new MyOrderAdapter(getSupportFragmentManager(), getLifecycle());
+        pager2.setAdapter(myOrderAdapter);
+        tab_layout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                pager2.setCurrentItem(tab.getPosition());
+            }
 
-        mlistViewArticle = findViewById(R.id.grwid_orders);
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
-        arrayList = new ArrayList<>();
-        modelAdapter = new ItemAdapter(MyOrders.this, R.layout.item, arrayList);
+            }
 
-        arrayList.add(new ItemModel(1, "",
-                "Футболка 3D — это удобная футболка прямого кроя, выполненная из синтетической ткани, " +
-                        "приятной на ощупь. Свойства ткани позволяют нанести яркий принт по всей поверхности, " +
-                        "сохраняя при этом цену за изделие доступной при персонализированном производстве ( все " +
-                        "товары на Vsemayki создаются под заказ). Футболка быстро сохнет, не мнется и сохраняет форму. " +
-                        "Можно заказать со своим дизайном.\n" +
-                        "\nДетали: прямой крой, круглый вырез горловины, длина до линии бедер \n" +
-                        "\nТип нанесения: сублимация на ткани\n" +
-                        "\nСостав: 100% полиэстер\n" +
-                        "\nПараметры модели на фото: рост 170 см, обхваты 80-60-93 см, размер футболки S\n" +
-                        "\nПравила ухода: стирать при температуре не выше 40 градусов, без отбеливателя." +
-                        " Гладить при температуре не выше 110 градусов",
-                "Футболка",""));
-        arrayList.add(new ItemModel(2, "", "Платье на широких бретелях со слегка " +
-                "прилегающим силуэтом из комфортной синтетической ткани. Принт наносится по всей поверхности и сохраняет свою " +
-                "яркость даже спустя сотни стирок. Можно заказать со своим дизайном.\n" +
-                "\nРост модели на фото: 172 см\n" +
-                "\nТип нанесения: сублимация на ткани\n" +
-                "\nДетали: полуприлегающий силуэт, широкие бретели, круглый вырез горловины, удлиненный подол сзади\n" +
-                "\nПараметры модели на фото: 90-63-82 см\n" +
-                "\nСостав: 100% полиэстер\n" +
-                "\nРазмер модели на фото: S\n" +
-                "\nПравила ухода: стирать при температуре не выше 40 градусов без отбеливателя. " +
-                "Гладить при температуре не выше 110 градусов.", "Платье",""));
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
 
-        mlistViewArticle.setAdapter(modelAdapter);
+            }
+        });
+        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tab_layout.selectTab(tab_layout.getTabAt(position));
+            }
+        });
+
     }
+
+
 }

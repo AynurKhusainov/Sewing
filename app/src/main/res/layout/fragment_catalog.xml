@@ -9,6 +9,7 @@
     <RelativeLayout
         android:id="@+id/appbar_catalog"
         android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
         android:layout_height="50dp">
 
         <TextView
@@ -22,6 +23,7 @@
 
 
         <View
+            android:id="@+id/linew"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
@@ -29,139 +31,17 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <GridView
+        android:id="@+id/grwid_orders"
         android:layout_width="match_parent"
-        android:id="@+id/filtres"
+        android:layout_height="wrap_content"
         android:layout_below="@id/appbar_catalog"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:padding="10dp"
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/sort"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/apps" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/sort"
-                android:text="Популярное"
-                android:textSize="20dp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:padding="10dp"
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/filtr"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/filter" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/filtr"
-                android:text="Фильтры"
-                android:textSize="20dp" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_below="@id/filtres"
-        android:layout_height="match_parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <include
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:layout_below="@id/filtres"
-                    layout="@layout/catalog_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:layout_below="@id/filtres"
-                    layout="@layout/catalog_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <include
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:layout_below="@id/filtres"
-                    layout="@layout/catalog_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:layout_below="@id/filtres"
-                    layout="@layout/catalog_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <include
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:layout_below="@id/filtres"
-                    layout="@layout/catalog_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:layout_below="@id/filtres"
-                    layout="@layout/catalog_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
+        android:divider="@null"
+        android:gravity="center"
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp"
+        tools:listitem="@layout/catalog_item" />
 
 
 </RelativeLayout>

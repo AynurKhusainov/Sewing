@@ -4,19 +4,32 @@
     android:background="@drawable/catalog_item_back"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:scaleType="centerCrop"
-        android:src="@drawable/platie"
-        android:id="@+id/tsirt"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/back_img" />
+    <RelativeLayout
+        android:id="@+id/rtsirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:src="@drawable/platie"
+            android:id="@+id/tsirt"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/back_img" />
+
+        <ImageView
+            android:id="@+id/img_color"
+            android:src="@drawable/front"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/title_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tsirt"
+        android:layout_below="@+id/rtsirt"
         android:layout_centerHorizontal="true"
         android:text="Футболка"
         android:textColor="@color/black"
@@ -24,11 +37,14 @@
         android:textStyle="bold" />
 
     <TextView
-        android:layout_margin="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title_item"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:text="990 P"
         android:textColor="#FF5C45" />
 

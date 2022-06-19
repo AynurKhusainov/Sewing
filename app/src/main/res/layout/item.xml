@@ -4,23 +4,45 @@
     android:layout_width="150dp"
     android:layout_height="300dp"
     android:layout_margin="10dp"
+    android:id="@+id/item"
     android:background="@drawable/catalog_item_back"
     android:orientation="vertical">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView_article"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/platie"
-        app:shapeAppearanceOverlay="@style/roundedImageView" />
 
+    <RelativeLayout
+        android:padding="5dp"
+        android:id="@+id/rtsirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/img_color"
+            android:adjustViewBounds="true"
+            android:src="@drawable/front"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_front"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/fonn" />
+    </RelativeLayout>
     <TextView
         android:id="@+id/txt_articleType"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView_article"
+        android:layout_below="@+id/rtsirt"
         android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         android:text="Футболка"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -28,11 +50,10 @@
 
 
     <TextView
-        android:layout_centerVertical="true"
-        android:id="@+id/price"
+        android:id="@+id/date_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_articleType"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:gravity="center" />
 </RelativeLayout>

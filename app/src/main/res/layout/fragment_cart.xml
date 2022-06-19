@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".User.bottom_pages.Cart">
 
-
     <RelativeLayout
         android:id="@+id/appbar_cart"
         android:layout_width="match_parent"
@@ -29,61 +28,19 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+
+    <GridView
+        android:id="@+id/grwid_orders"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/appbar_cart"
-        android:layout_height="match_parent">
+        android:layout_marginTop="10dp"
+        android:divider="@null"
+        android:gravity="center"
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp"
+        tools:listitem="@layout/catalog_item" />
 
-        <RelativeLayout
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image_cart"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/shopping_cart" />
-
-            <TextView
-                android:id="@+id/text_cart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/image_cart"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="25dp"
-                android:text="В корзине нет товаров"
-                android:textSize="25dp" />
-
-            <Button
-                android:id="@+id/button_catalog"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_below="@+id/text_cart"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="25dp"
-                android:backgroundTint="#2196F3"
-                android:text="Перейти в каталог"
-                android:textColor="@color/white" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_below="@+id/button_catalog"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="#FF5C45"
-                android:text="Создать товар"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-
-    </RelativeLayout>
 
 </RelativeLayout>

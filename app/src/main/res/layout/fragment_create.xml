@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.bottom_pages.Create">
+    android:id="@+id/create_r"
+    tools:context=".User.bottom_pages.Create.Create">
 
 
     <RelativeLayout
@@ -41,6 +42,7 @@
             android:src="@drawable/mans" />
 
         <Button
+            android:id="@+id/create_male"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -69,6 +71,7 @@
             android:src="@drawable/woman" />
 
         <Button
+            android:id="@+id/btn2"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -78,8 +81,8 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:backgroundTint="#FF5C45"
-            android:textSize="13dp"
-            android:text="Женская одежда" />
+            android:text="Женская одежда"
+            android:textSize="13dp" />
 
     </RelativeLayout>
     <View
@@ -97,6 +100,7 @@
             android:src="@drawable/child" />
 
         <Button
+            android:id="@+id/btn3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -105,9 +109,9 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:textSize="13dp"
             android:backgroundTint="@color/zeltiy"
-            android:text="Детская одежда" />
+            android:text="Детская одежда"
+            android:textSize="13dp" />
 
     </RelativeLayout>
 

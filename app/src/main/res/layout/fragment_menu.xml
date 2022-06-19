@@ -57,29 +57,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/favorite"
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/favorite"
-                android:layout_height="50dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="Мои товары"
-                android:textSize="25dp"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/orders"
             android:clickable="true"
             android:background="?android:attr/selectableItemBackground"
             android:layout_width="match_parent"
@@ -100,54 +80,12 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/delivery_truck"
-                android:layout_height="50dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="Доставка"
-                android:textSize="25dp"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
-
-
         <View
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#eee"/>
 
-        <LinearLayout
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/help"
-                android:layout_height="50dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="Поддержка"
-                android:textSize="25dp"
-                android:gravity="center_vertical"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
 
         <LinearLayout
             android:clickable="true"

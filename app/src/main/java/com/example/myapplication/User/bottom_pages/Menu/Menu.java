@@ -21,7 +21,7 @@ public class Menu extends Fragment {
 
         LinearLayout about=v.findViewById(R.id.about);
         LinearLayout profile=v.findViewById(R.id.profile);
-        LinearLayout favorite=v.findViewById(R.id.favorite);
+        LinearLayout orders=v.findViewById(R.id.orders);
 
         about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,11 +29,10 @@ public class Menu extends Fragment {
                 startActivity(new Intent(getActivity(), About.class));
             }
         });
-
-        favorite.setOnClickListener(new View.OnClickListener() {
+        orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Favorite.class));
+                startActivity(new Intent(getActivity(), Orders.class));
             }
         });
 
